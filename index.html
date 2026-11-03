@@ -1,0 +1,856 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bravos Pro Shop</title>
+<meta name="description" content="Loja oficial do Bravos Futebol Americano. Fan jerseys, bonés, chapéus sideline, bandeiras e itens de tailgate. Pedidos direto pelo WhatsApp.">
+<meta property="og:title" content="Bravos Pro Shop · Temporada 2026">
+<meta property="og:description" content="Produtos oficiais Bravos. Monte seu playbook e finalize pelo WhatsApp.">
+<meta property="og:image" content="/img/hero.webp">
+<meta name="theme-color" content="#0b0b0b">
+<link rel="icon" href="/img/logo-helmet.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Graduate&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#0b0b0b; --ink:#141414; --ink-2:#1d1d1d; --line:#2a2a2a;
+  --gold:#c99a32; --gold-2:#e2b553; --gold-deep:#9c7422;
+  --white:#f6f3ec; --muted:#a39d90; --turf:#0f1a12;
+  --wa:#25d366;
+  --radius:14px;
+  --display:'Anton',Impact,sans-serif; --varsity:'Graduate',Georgia,serif; --body:'Inter',system-ui,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:var(--body);line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1240px,100% - 32px);margin-inline:auto}
+.eyebrow{font-family:var(--varsity);color:var(--gold);letter-spacing:.18em;font-size:.78rem;text-transform:uppercase}
+.h-display{font-family:var(--display);text-transform:uppercase;letter-spacing:.01em;line-height:.92}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;padding:1rem 1.5rem;border-radius:999px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;font-size:.82rem;transition:transform .2s, background .2s, box-shadow .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-gold{background:var(--gold);color:#111;box-shadow:0 10px 30px -10px rgba(201,154,50,.7)}
+.btn-gold:hover{background:var(--gold-2)}
+.btn-ghost{border:1.5px solid rgba(246,243,236,.35)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+.btn-wa{background:var(--wa);color:#06280f}
+.btn-wa:hover{background:#3be27a}
+.wa-ico{width:20px;height:20px;flex:none}
+
+/* ===== Ticker ===== */
+.ticker{background:var(--gold);color:#111;overflow:hidden;white-space:nowrap;font-weight:800;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase}
+.ticker-track{display:inline-flex;gap:3rem;padding:.55rem 0;animation:tick 38s linear infinite}
+.ticker-track span{display:inline-flex;align-items:center;gap:.6rem}
+.ticker-track b{background:#111;color:var(--gold);padding:.1rem .45rem;border-radius:4px;font-family:var(--varsity);font-weight:400}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* ===== Header ===== */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(11,11,11,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:1rem}
+.brand{display:flex;align-items:center;gap:.7rem}
+.brand img{width:40px;height:40px;object-fit:contain}
+.brand-name{font-family:var(--display);font-size:1.55rem;letter-spacing:.04em;line-height:1}
+.brand-name small{display:block;font-family:var(--varsity);font-size:.6rem;color:var(--gold);letter-spacing:.3em}
+.nav-links{display:flex;gap:2rem;font-weight:600;font-size:.86rem;text-transform:uppercase;letter-spacing:.08em}
+.nav-links a{opacity:.8;transition:.2s}
+.nav-links a:hover{opacity:1;color:var(--gold)}
+.cart-btn{display:flex;align-items:center;gap:.55rem;padding:.6rem 1rem;border:1.5px solid var(--gold);border-radius:999px;color:var(--gold);font-weight:800;font-size:.8rem;text-transform:uppercase;letter-spacing:.06em}
+.cart-btn:hover{background:var(--gold);color:#111}
+.cart-count{background:var(--gold);color:#111;border-radius:999px;min-width:22px;height:22px;display:grid;place-items:center;font-size:.72rem;padding:0 6px}
+.cart-btn:hover .cart-count{background:#111;color:var(--gold)}
+.cart-count.bump{animation:bump .4s}
+@keyframes bump{50%{transform:scale(1.45)}}
+
+/* ===== Hero ===== */
+.hero{position:relative;overflow:hidden;background:
+  radial-gradient(1200px 600px at 75% 30%, rgba(201,154,50,.18), transparent 60%),
+  linear-gradient(180deg,#0b0b0b,#0d120e)}
+.field-lines{position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background:
+   repeating-linear-gradient(90deg, transparent 0 calc(10% - 1px), rgba(246,243,236,.06) calc(10% - 1px) 10%);}
+.hash{position:absolute;left:0;right:0;height:14px;pointer-events:none;opacity:.35;
+  background:repeating-linear-gradient(90deg, transparent 0 calc(2% - 1px), rgba(246,243,236,.5) calc(2% - 1px) 2%)}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:3rem;align-items:center;padding:4.5rem 0 5rem}
+.hero h1{font-size:clamp(3.4rem,8.4vw,7.6rem);margin:1rem 0 1.4rem}
+.hero h1 .gold{color:var(--gold)}
+.hero h1 .outline{color:transparent;-webkit-text-stroke:2px var(--white)}
+.hero p.lead{font-size:1.1rem;color:#d8d3c8;max-width:34rem}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
+.hero-photo{position:relative;aspect-ratio:4/5;border-radius:20px;overflow:hidden;box-shadow:0 40px 80px -30px #000;transform:rotate(1.5deg)}
+.hero-photo img{width:100%;height:100%;object-fit:cover}
+.hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.75))}
+.scorebug{position:absolute;left:-28px;bottom:36px;z-index:2;display:flex;align-items:stretch;background:#111;border:1px solid #333;border-radius:10px;overflow:hidden;font-weight:800;box-shadow:0 20px 40px -10px #000;transform:rotate(-1.5deg)}
+.scorebug .team{display:flex;align-items:center;gap:.5rem;padding:.55rem .8rem}
+.scorebug .team img{width:26px;height:26px}
+.scorebug .score{font-family:var(--varsity);font-size:1.5rem;padding:.3rem .8rem;background:var(--gold);color:#111;display:flex;align-items:center}
+.scorebug .score.opp{background:#262626;color:var(--muted)}
+.scorebug .clock{padding:.3rem .8rem;display:flex;flex-direction:column;justify-content:center;font-size:.66rem;letter-spacing:.1em;color:var(--muted)}
+.scorebug .clock strong{color:var(--white);font-size:.85rem}
+.hero-tag{position:absolute;right:18px;top:18px;z-index:2;background:rgba(0,0,0,.65);backdrop-filter:blur(6px);border:1px solid rgba(201,154,50,.5);color:var(--gold);padding:.4rem .8rem;border-radius:999px;font-family:var(--varsity);font-size:.7rem;letter-spacing:.14em}
+
+/* ===== Stat strip ===== */
+.stats{border-block:1px solid var(--line);background:var(--ink)}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:1.6rem 1rem;text-align:center;border-left:1px solid var(--line)}
+.stat:first-child{border-left:0}
+.stat .num{font-family:var(--varsity);font-size:2.2rem;color:var(--gold);line-height:1}
+.stat .lbl{font-size:.72rem;text-transform:uppercase;letter-spacing:.14em;color:var(--muted);margin-top:.4rem}
+
+/* ===== Section heads ===== */
+section{scroll-margin-top:80px}
+.sec{padding:6rem 0}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:2rem;margin-bottom:2.5rem;flex-wrap:wrap}
+.sec-head h2{font-size:clamp(2.6rem,6vw,4.6rem)}
+.sec-head p{color:var(--muted);max-width:30rem}
+
+/* ===== Filters ===== */
+.filters{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:2rem}
+.chip{padding:.6rem 1.05rem;border-radius:999px;border:1px solid var(--line);font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#cfc9bc;transition:.2s}
+.chip small{font-family:var(--varsity);color:var(--muted);margin-left:.35rem;font-weight:400}
+.chip:hover{border-color:var(--gold);color:var(--gold)}
+.chip.active{background:var(--gold);color:#111;border-color:var(--gold)}
+.chip.active small{color:#3a2c0b}
+
+/* ===== Product grid ===== */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1.25rem}
+.card{position:relative;background:var(--ink);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:transform .3s, border-color .3s}
+.card:hover{transform:translateY(-4px);border-color:rgba(201,154,50,.55)}
+.card-media{position:relative;aspect-ratio:1/1;overflow:hidden;cursor:pointer;
+  background:radial-gradient(circle at 50% 40%, #2b2b2b, #121212 70%)}
+.card-media::before{content:"";position:absolute;inset:0;opacity:.4;background:repeating-linear-gradient(90deg,transparent 0 19.6%,rgba(255,255,255,.05) 19.6% 20%)}
+.card-media img{position:absolute;inset:0;width:100%;height:100%;transition:opacity .5s, transform .6s}
+.card-media img.contain{object-fit:contain;padding:8%}
+.card-media img.cover{object-fit:cover}
+.card-media img.alt{opacity:0}
+.card:hover .card-media img.main.has-alt{opacity:0}
+.card:hover .card-media img.alt{opacity:1;transform:scale(1.04)}
+.card-num{position:absolute;left:12px;top:10px;z-index:2;font-family:var(--varsity);font-size:1.6rem;color:rgba(246,243,236,.9);text-shadow:0 2px 10px rgba(0,0,0,.6)}
+.badge{position:absolute;right:12px;top:12px;z-index:2;background:var(--gold);color:#111;font-size:.64rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .55rem;border-radius:4px}
+.badge.dark{background:#111;color:var(--gold);border:1px solid var(--gold)}
+.lifestyle-hint{position:absolute;left:12px;bottom:12px;z-index:2;font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;background:rgba(0,0,0,.6);padding:.3rem .55rem;border-radius:4px;color:#ddd;opacity:1;transition:.3s}
+.card:hover .lifestyle-hint{opacity:0}
+.card-body{padding:1.1rem 1.1rem 1.2rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
+.card-cat{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.card-title{font-family:var(--display);font-size:1.45rem;text-transform:uppercase;letter-spacing:.02em;line-height:1.05}
+.card-sub{color:var(--muted);font-size:.85rem}
+.card-foot{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:.9rem}
+.price{font-family:var(--varsity);font-size:1.5rem;color:var(--white)}
+.price small{font-size:.75rem;color:var(--muted);font-family:var(--body);margin-right:.2rem}
+.price .from{display:block;font-family:var(--body);font-size:.62rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase}
+.add{width:46px;height:46px;border-radius:50%;background:var(--gold);color:#111;display:grid;place-items:center;font-size:1.5rem;font-weight:800;transition:.2s}
+.add:hover{background:var(--gold-2);transform:rotate(90deg)}
+
+/* ===== Lookbook ===== */
+.lookbook{background:linear-gradient(180deg,var(--black),#101010)}
+.look-grid{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:170px;gap:1rem}
+.look{position:relative;border-radius:var(--radius);overflow:hidden;cursor:pointer;background:#1a1a1a}
+.look img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.look:hover img{transform:scale(1.06)}
+.look::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,.85))}
+.look-cap{position:absolute;left:16px;right:16px;bottom:14px;z-index:2;display:flex;justify-content:space-between;align-items:end;gap:1rem}
+.look-cap .t{font-family:var(--display);font-size:1.3rem;text-transform:uppercase;line-height:1}
+.look-cap .k{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:.25rem}
+.look-cap .p{flex:none;background:var(--gold);color:#111;font-weight:800;font-size:.75rem;padding:.4rem .7rem;border-radius:999px;transition:.2s}
+.look:hover .look-cap .p{background:var(--white)}
+.look.a{grid-column:span 4;grid-row:span 3}
+.look.b{grid-column:span 2;grid-row:span 3}
+.look.c{grid-column:span 2;grid-row:span 2}
+.look.d{grid-column:span 2;grid-row:span 2}
+.look.e{grid-column:span 2;grid-row:span 2}
+.look.a img{object-position:center 30%}
+
+/* ===== Tailgate banner ===== */
+.tailgate{position:relative;min-height:520px;display:flex;align-items:center;overflow:hidden}
+.tailgate>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tailgate::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(11,11,11,.95) 0%,rgba(11,11,11,.75) 45%,rgba(11,11,11,.1) 100%)}
+.tailgate .wrap{position:relative;z-index:2}
+.tailgate h2{font-size:clamp(2.8rem,7vw,5.6rem);max-width:12ch;margin:.8rem 0 1rem}
+.tailgate p{max-width:32rem;color:#d8d3c8;margin-bottom:1.6rem}
+.tail-items{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:1.8rem}
+.tail-items button{padding:.55rem .9rem;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);font-size:.8rem;font-weight:600;transition:.2s}
+.tail-items button:hover{border-color:var(--gold);color:var(--gold)}
+.tail-items b{font-family:var(--varsity);color:var(--gold);font-weight:400;margin-left:.3rem}
+
+/* ===== Playbook (how to buy) ===== */
+.downs{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;counter-reset:d}
+.down{position:relative;background:var(--ink);border:1px solid var(--line);border-radius:var(--radius);padding:1.6rem 1.4rem 1.5rem;overflow:hidden}
+.down .dn{font-family:var(--varsity);color:var(--gold);font-size:.78rem;letter-spacing:.12em}
+.down h3{font-family:var(--display);text-transform:uppercase;font-size:1.6rem;margin:.6rem 0 .4rem;line-height:1}
+.down p{color:var(--muted);font-size:.9rem}
+.down .big{position:absolute;right:-8px;bottom:-26px;font-family:var(--varsity);font-size:7rem;color:rgba(201,154,50,.08);line-height:1}
+.down.td{background:linear-gradient(135deg,var(--gold),var(--gold-deep));color:#111;border-color:var(--gold)}
+.down.td .dn,.down.td p{color:#2a1f08}
+.down.td .big{color:rgba(0,0,0,.12)}
+.play-arrows{height:28px;margin:1.2rem 0 0;opacity:.5}
+
+/* ===== Combine (size chart) ===== */
+.combine{background:var(--turf);position:relative;overflow:hidden}
+.combine .field-lines{opacity:.35}
+.combine-grid{position:relative;display:grid;grid-template-columns:.8fr 1.2fr;gap:3rem;align-items:start}
+.combine h2{font-size:clamp(2.6rem,6vw,4.6rem);margin:.8rem 0 1rem}
+.combine p{color:#c9c4b8;margin-bottom:1rem}
+.how{display:grid;gap:.6rem;margin-top:1.4rem}
+.how div{display:flex;gap:.8rem;align-items:start;font-size:.92rem;color:#d8d3c8}
+.how b{font-family:var(--varsity);color:var(--gold);font-weight:400;min-width:1.6rem}
+.table-wrap{background:rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);overflow:auto}
+table{width:100%;border-collapse:collapse;font-size:.92rem;min-width:420px}
+th,td{padding:.7rem 1rem;text-align:center;border-bottom:1px solid rgba(255,255,255,.06)}
+th{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700;background:rgba(0,0,0,.35)}
+td:first-child{font-family:var(--varsity);font-size:1.05rem;color:var(--white)}
+tbody tr:hover td{background:rgba(201,154,50,.1)}
+
+/* ===== Final CTA ===== */
+.endzone{position:relative;padding:6rem 0;text-align:center;overflow:hidden;background:
+  repeating-linear-gradient(135deg, rgba(201,154,50,.10) 0 18px, transparent 18px 36px), #0b0b0b;border-top:1px solid var(--line)}
+.endzone h2{font-size:clamp(3rem,10vw,8.5rem);line-height:.88}
+.endzone h2 span{color:var(--gold)}
+.endzone p{color:var(--muted);max-width:34rem;margin:1.4rem auto 2rem}
+footer{padding:2.5rem 0;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+
+/* ===== Floating WA ===== */
+.fab{position:fixed;right:calc(20px + env(safe-area-inset-right,0px));bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:60;width:60px;height:60px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 12px 30px -6px rgba(37,211,102,.55);transition:.2s}
+.fab:hover{transform:scale(1.08)}
+.fab svg{width:30px;height:30px}
+
+/* ===== Drawer & Modal ===== */
+.scrim{position:fixed;inset:0;z-index:80;background:rgba(0,0,0,.6);backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:.3s}
+.scrim.open{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;bottom:0;z-index:90;width:min(440px,100%);background:#111;border-left:1px solid var(--line);display:flex;flex-direction:column;transform:translateX(100%);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.drawer.open{transform:none}
+.drawer-head{display:flex;align-items:center;justify-content:space-between;padding:1.3rem 1.4rem;border-bottom:1px solid var(--line)}
+.drawer-head h3{font-family:var(--display);text-transform:uppercase;font-size:1.7rem;line-height:1}
+.drawer-head h3 small{display:block;font-family:var(--varsity);font-size:.66rem;color:var(--gold);letter-spacing:.18em;margin-bottom:.3rem}
+.x{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;font-size:1.2rem}
+.x:hover{border-color:var(--gold);color:var(--gold)}
+.drawer-body{flex:1;overflow:auto;padding:1rem 1.4rem}
+.empty{text-align:center;padding:3rem 1rem;color:var(--muted)}
+.empty .h-display{font-size:2rem;color:var(--white);margin-bottom:.5rem}
+.line{display:grid;grid-template-columns:72px 1fr auto;gap:.9rem;padding:.9rem 0;border-bottom:1px solid var(--line);align-items:center}
+.line img{width:72px;height:72px;border-radius:10px;object-fit:cover;background:#1e1e1e}
+.line .ln{font-weight:700;font-size:.92rem;line-height:1.25}
+.line .lv{font-size:.76rem;color:var(--muted);margin-top:.15rem}
+.line .lp{font-family:var(--varsity);color:var(--gold);font-size:.95rem;margin-top:.3rem}
+.qty{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.qty button{width:30px;height:30px;font-weight:800}
+.qty button:hover{color:var(--gold)}
+.qty span{min-width:22px;text-align:center;font-weight:700;font-size:.85rem}
+.rm{display:block;margin-top:.4rem;font-size:.7rem;color:var(--muted);text-decoration:underline;text-align:right;width:100%}
+.drawer-foot{padding:1.2rem 1.4rem 1.4rem;border-top:1px solid var(--line);display:grid;gap:.8rem;background:#0e0e0e}
+.field{display:grid;gap:.3rem}
+.field label{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.field input,.field textarea,.field select{background:#1a1a1a;border:1px solid var(--line);border-radius:10px;padding:.7rem .85rem;color:var(--white);font:inherit;font-size:.9rem}
+.field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--gold)}
+.total{display:flex;justify-content:space-between;align-items:baseline}
+.total span{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.total strong{font-family:var(--varsity);font-size:1.8rem;color:var(--gold)}
+.fine{font-size:.72rem;color:var(--muted);text-align:center}
+
+.modal{position:fixed;inset:0;z-index:95;display:grid;place-items:center;padding:16px;pointer-events:none;opacity:0;transition:.25s}
+.modal.open{opacity:1;pointer-events:auto}
+.modal-card{position:relative;width:min(980px,100%);max-height:calc(100vh - 32px);overflow:auto;background:#111;border:1px solid var(--line);border-radius:20px;display:grid;grid-template-columns:1.1fr 1fr;transform:translateY(20px);transition:.3s}
+.modal.open .modal-card{transform:none}
+.modal .x{position:absolute;right:14px;top:14px;z-index:3;background:#111}
+.gallery{background:radial-gradient(circle at 50% 40%,#2b2b2b,#111 75%);padding:1rem;display:flex;flex-direction:column;gap:.7rem}
+.g-main{aspect-ratio:1/1;border-radius:14px;overflow:hidden;background:#151515}
+.g-main img{width:100%;height:100%;object-fit:contain}
+.g-main img.cover{object-fit:cover}
+.g-thumbs{display:flex;gap:.5rem}
+.g-thumbs button{width:64px;height:64px;border-radius:10px;overflow:hidden;border:2px solid transparent;opacity:.6;background:#1a1a1a}
+.g-thumbs button.on{border-color:var(--gold);opacity:1}
+.g-thumbs img{width:100%;height:100%;object-fit:cover}
+.m-info{padding:2rem 1.8rem;display:flex;flex-direction:column;gap:1rem}
+.m-info h3{font-family:var(--display);text-transform:uppercase;font-size:2.4rem;line-height:.95}
+.m-info .desc{color:#cfc9bc;font-size:.95rem}
+.m-price{font-family:var(--varsity);font-size:2.2rem;color:var(--gold)}
+.opt-label{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:.45rem;display:flex;justify-content:space-between}
+.opt-label a{color:var(--gold);text-decoration:underline;letter-spacing:.06em}
+.opts{display:flex;flex-wrap:wrap;gap:.45rem}
+.opt{min-width:48px;padding:.55rem .8rem;border:1px solid var(--line);border-radius:10px;font-weight:700;font-size:.82rem;transition:.15s}
+.opt:hover{border-color:var(--gold)}
+.opt.on{background:var(--gold);color:#111;border-color:var(--gold)}
+.opt small{display:block;font-weight:500;font-size:.68rem;opacity:.75}
+.m-actions{display:grid;grid-template-columns:auto 1fr;gap:.6rem;align-items:center}
+.m-actions .qty button{width:40px;height:46px}
+.m-actions .qty span{min-width:30px}
+.m-actions .btn{width:100%}
+.err{color:#ff8a7a;font-size:.8rem;min-height:1em}
+.toast{position:fixed;left:50%;bottom:24px;z-index:120;transform:translate(-50%,calc(100% + 60px));background:var(--white);color:#111;padding:.85rem 1.2rem;border-radius:999px;font-weight:700;font-size:.88rem;box-shadow:0 20px 40px -10px #000;transition:.35s;display:flex;gap:.6rem;align-items:center;max-width:calc(100% - 32px)}
+.toast.show{transform:translate(-50%,0)}
+.toast b{font-family:var(--varsity);color:var(--gold-deep);font-weight:400}
+
+/* reveal: conteúdo sempre visível; só um leve deslize quando entra na tela */
+.rv.pre{transform:translateY(18px)}
+.rv{transition:transform .7s}
+
+/* ===== Responsive ===== */
+@media (max-width:980px){
+  .nav-links{display:none}
+  .hero-grid{grid-template-columns:1fr;padding:3rem 0 4rem;gap:2.5rem}
+  .hero-photo{max-width:520px;width:100%;justify-self:center}
+  .scorebug{left:12px}
+  .downs{grid-template-columns:repeat(2,1fr)}
+  .combine-grid{grid-template-columns:1fr}
+  .modal-card{grid-template-columns:1fr}
+  .look-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:200px}
+  .look.a{grid-column:span 2;grid-row:span 2}
+  .look.b,.look.c,.look.d,.look.e{grid-column:span 1;grid-row:span 1}
+}
+@media (max-width:640px){
+  .sec{padding:4.5rem 0}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(3){border-left:0}
+  .stat:nth-child(n+3){border-top:1px solid var(--line)}
+  .downs{grid-template-columns:1fr}
+  .grid{grid-template-columns:repeat(2,1fr);gap:.7rem}
+  .card-title{font-size:1.1rem}
+  .card-sub{display:none}
+  .card-body{padding:.8rem}
+  .price{font-size:1.15rem}
+  .add{width:38px;height:38px;font-size:1.25rem}
+  .card-num{font-size:1.2rem}
+  .lifestyle-hint{display:none}
+  .look-grid{grid-template-columns:1fr;grid-auto-rows:240px}
+  .look.a,.look.b,.look.c,.look.d,.look.e{grid-column:span 1;grid-row:span 1}
+  .look.a{grid-row:span 2}
+  .cart-btn .lbl{display:none}
+  .brand-name{font-size:1.3rem}
+  .m-info{padding:1.4rem 1.2rem}
+  .m-info h3{font-size:1.9rem}
+  .tailgate::before{background:linear-gradient(180deg,rgba(11,11,11,.55),rgba(11,11,11,.95) 60%)}
+  .tailgate{align-items:end;padding:3rem 0}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<!-- Ticker -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track" id="ticker"></div>
+</div>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="brand" aria-label="Bravos Pro Shop">
+      <img src="/img/logo-helmet.webp" alt="">
+      <span class="brand-name">BRAVOS<small>PRO SHOP · 2026</small></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#locker">Locker Room</a>
+      <a href="#lookbook">Lookbook</a>
+      <a href="#playbook">Playbook</a>
+      <a href="#combine">Combine</a>
+    </nav>
+    <button class="cart-btn" id="openCart" aria-label="Abrir seu playbook (carrinho)">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 4h16v16H4z"/><path d="M8 9l3 3m0-3l-3 3"/><circle cx="16" cy="15" r="2"/><path d="M11 12c2 0 3 1 4 2"/></svg>
+      <span class="lbl">Playbook</span>
+      <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+<!-- Hero -->
+<section class="hero">
+  <div class="field-lines"></div>
+  <div class="hash" style="top:22%"></div>
+  <div class="hash" style="bottom:18%"></div>
+  <div class="wrap hero-grid">
+    <div class="rv">
+      <span class="eyebrow">Kickoff Collection · Temporada 2026</span>
+      <h1 class="h-display">Vista a<br><span class="gold">camisa.</span><br><span class="outline">Entre em campo.</span></h1>
+      <p class="lead">Produtos oficiais do Bravos Futebol Americano. Do sideline ao tailgate: monte seu playbook e feche o pedido direto no WhatsApp com o time.</p>
+      <div class="hero-ctas">
+        <a href="#locker" class="btn btn-gold">Entrar no Locker Room</a>
+        <a href="#" class="btn btn-ghost" data-wa-direct>
+          <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4c-1-1.6-1.5-3.4-1.5-5.2 0-5.4 4.4-9.8 9.8-9.8 2.6 0 5.1 1 6.9 2.9 1.8 1.8 2.9 4.3 2.9 6.9 0 5.4-4.4 9.8-9.8 9.8zm8.4-18.2C18.2 1.3 15.2 0 12 0 5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.8 1 3.8 1.5 5.8 1.5 6.6 0 12-5.4 12-12 0-3.2-1.2-6.2-3.5-8.5z"/></svg>
+          Falar com o time
+        </a>
+      </div>
+    </div>
+    <div class="hero-photo rv">
+      <img src="/img/hero.webp" alt="Jogadores do Bravos comemorando com o troféu">
+      <span class="hero-tag">CHAMPIONS MINDSET</span>
+      <div class="scorebug" aria-hidden="true">
+        <div class="team"><img src="/img/logo-helmet.webp" alt="">BRA</div>
+        <div class="score">26</div>
+        <div class="score opp">00</div>
+        <div class="clock"><strong>4TH</strong>0:00 · FINAL</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats -->
+<div class="stats">
+  <div class="wrap stats-grid">
+    <div class="stat"><div class="num">12</div><div class="lbl">Itens oficiais</div></div>
+    <div class="stat"><div class="num">2026</div><div class="lbl">Temporada</div></div>
+    <div class="stat"><div class="num">4</div><div class="lbl">Downs pro pedido</div></div>
+    <div class="stat"><div class="num">100%</div><div class="lbl">Sangue Bravo</div></div>
+  </div>
+</div>
+
+<!-- Shop -->
+<section id="locker" class="sec">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <span class="eyebrow">The Locker Room</span>
+        <h2 class="h-display">Escolha sua<br>formação</h2>
+      </div>
+      <p>Passe o mouse no produto para vê-lo em campo. Clique ou toque para ver detalhes e tamanhos e adicionar ao seu playbook.</p>
+    </div>
+    <div class="filters" id="filters" role="tablist"></div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<!-- Lookbook -->
+<section id="lookbook" class="sec lookbook">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <span class="eyebrow">Game Day Lookbook</span>
+        <h2 class="h-display">Do sideline<br>pra arquibancada</h2>
+      </div>
+      <p>Como a torcida Bravo veste o dia de jogo. Toque em qualquer look para ver a peça.</p>
+    </div>
+    <div class="look-grid" id="looks"></div>
+  </div>
+</section>
+
+<!-- Tailgate -->
+<section class="tailgate" aria-label="Tailgate">
+  <img src="/img/caneca-chopp.webp" alt="Amigos brindando com canecas de chopp Bravos">
+  <div class="wrap">
+    <span class="eyebrow">Tailgate Season</span>
+    <h2 class="h-display">O pré-jogo também tem uniforme.</h2>
+    <p>Na NFL o jogo começa no estacionamento. No Bravos, começa no brinde. Caneca de chopp, copo de alumínio e caneca oficial para o seu tailgate.</p>
+    <div class="tail-items" id="tailItems"></div>
+    <a href="#locker" class="btn btn-gold" data-filter-jump="tailgate">Ver linha Tailgate</a>
+  </div>
+</section>
+
+<!-- Playbook -->
+<section id="playbook" class="sec">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <span class="eyebrow">The Playbook</span>
+        <h2 class="h-display">Como comprar<br>em 4 downs</h2>
+      </div>
+      <p>Sem checkout, sem cadastro. Você monta o pedido aqui e o time fecha com você no WhatsApp: pagamento, entrega e personalização.</p>
+    </div>
+    <div class="downs">
+      <div class="down rv"><div class="dn">1ST &amp; 10</div><h3>Escolha</h3><p>Navegue pelo Locker Room e escolha suas peças oficiais.</p><div class="big">1</div></div>
+      <div class="down rv"><div class="dn">2ND DOWN</div><h3>Ajuste</h3><p>Selecione tamanho, cor ou versão. Na dúvida, confira o Combine.</p><div class="big">2</div></div>
+      <div class="down rv"><div class="dn">3RD DOWN</div><h3>Monte o playbook</h3><p>Adicione tudo ao seu playbook (carrinho) e revise as quantidades.</p><div class="big">3</div></div>
+      <div class="down td rv"><div class="dn">4TH DOWN · GO FOR IT</div><h3>Touchdown no Whats</h3><p>Envie o pedido pronto no WhatsApp e combine pagamento e entrega.</p><div class="big">TD</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Combine / Size chart -->
+<section id="combine" class="sec combine">
+  <div class="field-lines"></div>
+  <div class="wrap combine-grid">
+    <div class="rv">
+      <span class="eyebrow">The Combine</span>
+      <h2 class="h-display">Medidas<br>oficiais</h2>
+      <p>Antes do draft, todo atleta passa pelo Combine. Antes do seu pedido, confira as medidas da Fan Jersey Dry Fit e da Camiseta Básica.</p>
+      <div class="how">
+        <div><b>01</b>Pegue uma camiseta que veste bem e deite numa superfície plana.</div>
+        <div><b>02</b>Largura: meça de axila a axila. Altura: do ombro até a barra.</div>
+        <div><b>03</b>Compare com a tabela. Ficou entre dois? Vá no maior.</div>
+      </div>
+    </div>
+    <div class="table-wrap rv">
+      <table>
+        <thead><tr><th>Tamanho</th><th>Largura (cm)</th><th>Altura (cm)</th><th>Cód. Dry Fit</th><th>Cód. Poliviscose</th></tr></thead>
+        <tbody id="sizeRows"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- End zone CTA -->
+<section class="endzone">
+  <div class="wrap rv">
+    <span class="eyebrow">4th &amp; Goal</span>
+    <h2 class="h-display">Hora de<br><span>marcar.</span></h2>
+    <p>Dúvida de tamanho, pedido em grupo para a torcida ou kit para a família? Chama o time no WhatsApp.</p>
+    <a href="#" class="btn btn-wa" data-wa-direct>
+      <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4c-1-1.6-1.5-3.4-1.5-5.2 0-5.4 4.4-9.8 9.8-9.8 2.6 0 5.1 1 6.9 2.9 1.8 1.8 2.9 4.3 2.9 6.9 0 5.4-4.4 9.8-9.8 9.8zm8.4-18.2C18.2 1.3 15.2 0 12 0 5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.8 1 3.8 1.5 5.8 1.5 6.6 0 12-5.4 12-12 0-3.2-1.2-6.2-3.5-8.5z"/></svg>
+      Chamar no WhatsApp
+    </a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div class="brand"><img src="/img/logo-helmet.webp" alt="" style="width:32px;height:32px"><span class="brand-name" style="font-size:1.1rem">BRAVOS<small>FUTEBOL AMERICANO</small></span></div>
+    <div>© 2026 Bravos · Produtos oficiais · Pedidos via WhatsApp (51) 98538-0128</div>
+  </div>
+</footer>
+
+<a href="#" class="fab" data-wa-direct aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#fff"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4c-1-1.6-1.5-3.4-1.5-5.2 0-5.4 4.4-9.8 9.8-9.8 2.6 0 5.1 1 6.9 2.9 1.8 1.8 2.9 4.3 2.9 6.9 0 5.4-4.4 9.8-9.8 9.8zm8.4-18.2C18.2 1.3 15.2 0 12 0 5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.8 1 3.8 1.5 5.8 1.5 6.6 0 12-5.4 12-12 0-3.2-1.2-6.2-3.5-8.5z"/></svg>
+</a>
+
+<!-- Cart drawer -->
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Seu playbook" aria-hidden="true">
+  <div class="drawer-head">
+    <h3><small>GAME PLAN</small>Seu Playbook</h3>
+    <button class="x" data-close aria-label="Fechar">✕</button>
+  </div>
+  <div class="drawer-body" id="cartBody"></div>
+  <div class="drawer-foot" id="cartFoot">
+    <div class="field"><label for="cName">Seu nome</label><input id="cName" placeholder="Como o time te chama?" autocomplete="name"></div>
+    <div class="field"><label for="cNote">Observações (opcional)</label><textarea id="cNote" rows="2" placeholder="Ex.: retirar no treino, entrega, presente…"></textarea></div>
+    <div class="total"><span>Total do drive</span><strong id="cartTotal">R$ 0,00</strong></div>
+    <a class="btn btn-wa" id="checkout" href="#" target="_blank" rel="noopener">
+      <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4c-1-1.6-1.5-3.4-1.5-5.2 0-5.4 4.4-9.8 9.8-9.8 2.6 0 5.1 1 6.9 2.9 1.8 1.8 2.9 4.3 2.9 6.9 0 5.4-4.4 9.8-9.8 9.8zm8.4-18.2C18.2 1.3 15.2 0 12 0 5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.8 1 3.8 1.5 5.8 1.5 6.6 0 12-5.4 12-12 0-3.2-1.2-6.2-3.5-8.5z"/></svg>
+      Finalizar no WhatsApp
+    </a>
+    <p class="fine">Pagamento e entrega são combinados com o time na conversa.</p>
+  </div>
+</aside>
+
+<!-- Product modal -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="modal-card" id="modalCard"></div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ================== CONFIG ================== */
+const WHATSAPP = '5551985380128';
+const GREETING = '*BRAVOS* Olá, gostaria de fazer um pedido!';
+
+const SIZES = ['PP','P','M','G','GG','G1','G2','G3','G4','G5'];
+const SIZE_TABLE = [
+  ['PP',51,67,310,320],['P',54,70,330,340],['M',57,73,350,360],['G',60,76,370,380],['GG',63,79,390,400],
+  ['G1',66,82,410,420],['G2',69,85,430,440],['G3',72,88,450,460],['G4',75,91,470,480],['G5',78,94,490,500]
+];
+
+const CATS = [
+  {id:'all',      label:'Todos'},
+  {id:'gameday',  label:'Game Day Fit'},
+  {id:'sideline', label:'Sideline'},
+  {id:'torcida',  label:'Arquibancada'},
+  {id:'tailgate', label:'Tailgate'}
+];
+
+/* fit: 'contain' para PNG recortado, 'cover' para foto com fundo */
+const PRODUCTS = [
+  {id:'jersey-preta', num:'01', cat:'gameday', catLabel:'Game Day Fit', name:'Fan Jersey Preta', sub:'Dry Fit · Temporada 2026', price:89, badge:'Home',
+   desc:'A camisa de casa. Fan Jersey Bravos em tecido Dry Fit, com patrocinadores oficiais da temporada 2026. Leve, respirável e pronta pro dia de jogo.',
+   imgs:[['jersey-preta','contain'],['jersey-preta-2','cover'],['jersey-preta-3','cover']],
+   options:[{key:'Tamanho',type:'size',values:SIZES}], custom:true},
+  {id:'jersey-branca', num:'02', cat:'gameday', catLabel:'Game Day Fit', name:'Fan Jersey Branca', sub:'Dry Fit · Temporada 2026', price:89, badge:'Away',
+   desc:'O uniforme de visitante. Fan Jersey Bravos branca em Dry Fit, com detalhes dourados e patrocinadores oficiais 2026.',
+   imgs:[['jersey-branca','contain'],['jersey-branca-2','cover'],['jersey-branca-3','cover']],
+   options:[{key:'Tamanho',type:'size',values:SIZES}], custom:true},
+  {id:'camiseta', num:'03', cat:'gameday', catLabel:'Game Day Fit', name:'Camiseta Básica', sub:'Preta ou branca', price:69,
+   desc:'A camiseta do dia a dia com o escudo Bravos no peito. Para o treino, o trabalho e o pós-jogo.',
+   imgs:[['camiseta-2','contain'],['camiseta','contain']],
+   options:[{key:'Cor',values:['Preta','Branca']},{key:'Tamanho',type:'size',values:SIZES}]},
+  {id:'chapeu', num:'04', cat:'sideline', catLabel:'Sideline', name:'Chapéu Sideline', sub:'Com patrocinadores oficiais 2026', price:129, badge:'Sideline',
+   desc:'Inspirado nos chapéus de sideline dos coaches da NFL. Aba larga, proteção na nuca e patrocinadores oficiais da temporada 2026.',
+   imgs:[['chapeu-2','contain'],['chapeu','cover'],['chapeu-3','contain']]},
+  {id:'bone', num:'05', cat:'sideline', catLabel:'Sideline', name:'Boné Bravos', sub:'Com escudo bordado', price:69,
+   desc:'Boné preto com o escudo Bravos. O clássico de quem vive o dia de jogo, dentro ou fora de campo.',
+   imgs:[['bone-2','cover'],['bone','contain']]},
+  {id:'gorro', num:'06', cat:'sideline', catLabel:'Sideline', name:'Gorro Bravos', sub:'Liso c/ pompom ou mesclado', price:79, priceFrom:true, badge:'Winter Game',
+   desc:'Para os jogos de inverno. Gorro com pompom e escudo Bravos em 3 versões: branco, preto ou mesclado.',
+   imgs:[['gorro','cover']],
+   options:[{key:'Modelo',values:[{v:'Liso Branco c/ pompom',p:79},{v:'Liso Preto c/ pompom',p:79},{v:'Mesclado',p:89}]}]},
+  {id:'bandeira', num:'07', cat:'torcida', catLabel:'Arquibancada', name:'Bandeira Oficial', sub:'Dupla face · M ou G', price:329, priceFrom:true, badge:'Dupla face',
+   desc:'A bandeira oficial do Bravos, dupla face. Tamanho M (90×130cm) ou G (135×193cm) para fazer barulho na arquibancada.',
+   imgs:[['bandeira','contain']],
+   options:[{key:'Tamanho',values:[{v:'M · 90×130cm',p:329},{v:'G · 135×193cm',p:449}]}]},
+  {id:'cachecol', num:'08', cat:'torcida', catLabel:'Arquibancada', name:'Cachecol Bravos', sub:'18×150cm', price:89,
+   desc:'Cachecol oficial com franjas douradas, 18×150cm. Para erguer na entrada do time.',
+   imgs:[['cachecol','cover']]},
+  {id:'flamula', num:'09', cat:'torcida', catLabel:'Arquibancada', name:'Flâmula Bravos', sub:'Triangular · 25×35cm', price:59,
+   desc:'Flâmula triangular com franjas, 25×35cm. Para o quarto, o escritório ou o carro.',
+   imgs:[['flamula','contain']]},
+  {id:'caneca-chopp', num:'10', cat:'tailgate', catLabel:'Tailgate', name:'Caneca de Chopp', sub:'Vidro jateado', price:69, badge:'Tailgate',
+   desc:'Caneca de chopp em vidro jateado com o escudo Bravos. Obrigatória no tailgate.',
+   imgs:[['caneca-chopp-2','cover'],['caneca-chopp','cover']]},
+  {id:'copo', num:'11', cat:'tailgate', catLabel:'Tailgate', name:'Copo Alumínio', sub:'500ml · logo Bravos', price:49,
+   desc:'Copo de alumínio 500ml com o logo Bravos. Resistente, mantém a temperatura e vai a qualquer jogo.',
+   imgs:[['copo','cover']]},
+  {id:'caneca', num:'12', cat:'tailgate', catLabel:'Tailgate', name:'Caneca Bravos', sub:'Porcelana', price:59,
+   desc:'Caneca de porcelana Bravos. O café da manhã de segunda depois da vitória.',
+   imgs:[['caneca','cover']]}
+];
+
+const LOOKS = [
+  {cls:'a', img:'jersey-preta-2', kicker:'Home Uniform', title:'Fan Jersey Preta', pid:'jersey-preta'},
+  {cls:'b', img:'chapeu', kicker:'Coach Mode', title:'Chapéu Sideline', pid:'chapeu'},
+  {cls:'c', img:'bone-2', kicker:'Everyday Bravo', title:'Boné Bravos', pid:'bone'},
+  {cls:'d', img:'cachecol', kicker:'Arquibancada', title:'Cachecol', pid:'cachecol'},
+  {cls:'e', img:'jersey-branca-3', kicker:'Away Uniform', title:'Fan Jersey Branca', pid:'jersey-branca'}
+];
+
+const TICKER = [
+  ['NOW','Fan Jersey 2026 disponível nas versões Home e Away'],
+  ['1ST DOWN','Monte seu playbook e finalize pelo WhatsApp'],
+  ['INJURY REPORT','Seu armário está sem Bravos? Resolva hoje'],
+  ['TAILGATE','Caneca de chopp oficial já no Locker Room'],
+  ['WEATHER','Frio no estádio: gorro e cachecol em campo'],
+  ['TOUCHDOWN','Pedido em grupo para a torcida? Chame o time']
+];
+
+/* ================== HELPERS ================== */
+const $ = s => document.querySelector(s);
+const brl = n => 'R$ ' + n.toFixed(2).replace('.',',').replace(/\B(?=(\d{3})+(?!\d))/g,'.');
+const img = n => `/img/${n}.webp`;
+const byId = id => PRODUCTS.find(p=>p.id===id);
+const waLink = text => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`;
+const store = {
+  get(){ try{ return JSON.parse(localStorage.getItem('bravos-cart')||'[]') }catch(e){ return [] } },
+  set(v){ try{ localStorage.setItem('bravos-cart', JSON.stringify(v)) }catch(e){} }
+};
+let cart = store.get();
+let filter = 'all';
+
+/* ================== RENDER: ticker / filters / grid ================== */
+function renderTicker(){
+  const items = TICKER.map(([k,t])=>`<span><b>${k}</b>${t}</span>`).join('');
+  $('#ticker').innerHTML = items + items;
+}
+function renderFilters(){
+  $('#filters').innerHTML = CATS.map(c=>{
+    const n = c.id==='all' ? PRODUCTS.length : PRODUCTS.filter(p=>p.cat===c.id).length;
+    return `<button class="chip ${filter===c.id?'active':''}" data-cat="${c.id}" role="tab">${c.label}<small>${String(n).padStart(2,'0')}</small></button>`;
+  }).join('');
+}
+function priceHTML(p){
+  return `<div class="price">${p.priceFrom?'<span class="from">a partir de</span>':''}<small>R$</small>${p.price}<small>,00</small></div>`;
+}
+function renderGrid(){
+  const list = PRODUCTS.filter(p=>filter==='all'||p.cat===filter);
+  $('#grid').innerHTML = list.map(p=>{
+    const [m,mf] = p.imgs[0]; const alt = p.imgs[1];
+    return `<article class="card rv">
+      <div class="card-media" data-open="${p.id}" role="button" tabindex="0" aria-label="Ver ${p.name}">
+        <span class="card-num">#${p.num}</span>
+        ${p.badge?`<span class="badge ${p.cat==='gameday'?'':'dark'}">${p.badge}</span>`:''}
+        <img class="main ${mf} ${alt?'has-alt':''}" src="${img(m)}" alt="${p.name}" loading="lazy">
+        ${alt?`<img class="alt ${alt[1]}" src="${img(alt[0])}" alt="" loading="lazy"><span class="lifestyle-hint">Ver em campo ↗</span>`:''}
+      </div>
+      <div class="card-body">
+        <span class="card-cat">${p.catLabel}</span>
+        <h3 class="card-title">${p.name}</h3>
+        <p class="card-sub">${p.sub}</p>
+        <div class="card-foot">
+          ${priceHTML(p)}
+          <button class="add" data-quick="${p.id}" aria-label="Adicionar ${p.name}">+</button>
+        </div>
+      </div>
+    </article>`;
+  }).join('');
+  observe();
+}
+function renderLooks(){
+  $('#looks').innerHTML = LOOKS.map(l=>{
+    const p = byId(l.pid);
+    return `<div class="look ${l.cls} rv" data-open="${p.id}" role="button" tabindex="0">
+      <img src="${img(l.img)}" alt="${l.title}" loading="lazy">
+      <div class="look-cap"><div><div class="k">${l.kicker}</div><div class="t">${l.title}</div></div><span class="p">${brl(p.price)} →</span></div>
+    </div>`;
+  }).join('');
+  $('#tailItems').innerHTML = PRODUCTS.filter(p=>p.cat==='tailgate')
+    .map(p=>`<button data-open="${p.id}">${p.name}<b>${brl(p.price)}</b></button>`).join('');
+  $('#sizeRows').innerHTML = SIZE_TABLE.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('');
+}
+
+/* ================== MODAL ================== */
+let cur = null;
+function openProduct(id){
+  const p = byId(id); if(!p) return;
+  cur = {p, sel:{}, qty:1, custom:''};
+  (p.options||[]).forEach(o=>{ if(o.type!=='size'){ const v=o.values[0]; cur.sel[o.key]= typeof v==='string'?v:v.v; } });
+  drawModal(0);
+  $('#modal').classList.add('open'); $('#modal').setAttribute('aria-hidden','false');
+  $('#scrim').classList.add('open'); document.body.style.overflow='hidden';
+}
+function unitPrice(p, sel){
+  let price = p.price;
+  (p.options||[]).forEach(o=>o.values.forEach(v=>{ if(typeof v==='object' && sel[o.key]===v.v) price=v.p; }));
+  return price;
+}
+function drawModal(gi){
+  const {p,sel,qty} = cur;
+  const [gm,gf] = p.imgs[gi];
+  $('#modalCard').innerHTML = `
+    <button class="x" data-close aria-label="Fechar">✕</button>
+    <div class="gallery">
+      <div class="g-main"><img class="${gf==='cover'?'cover':''}" src="${img(gm)}" alt="${p.name}"></div>
+      ${p.imgs.length>1?`<div class="g-thumbs">${p.imgs.map((im,i)=>`<button class="${i===gi?'on':''}" data-g="${i}"><img src="${img(im[0])}" alt=""></button>`).join('')}</div>`:''}
+    </div>
+    <div class="m-info">
+      <span class="eyebrow">#${p.num} · ${p.catLabel}</span>
+      <h3>${p.name}</h3>
+      <div class="m-price" id="mPrice">${brl(unitPrice(p,sel))}</div>
+      <p class="desc">${p.desc}</p>
+      ${(p.options||[]).map(o=>`
+        <div>
+          <div class="opt-label"><span>${o.key}${sel[o.key]?': '+sel[o.key]:''}</span>${o.type==='size'?'<a href="#combine" data-close>Ver medidas</a>':''}</div>
+          <div class="opts">${o.values.map(v=>{const val=typeof v==='string'?v:v.v; return `<button class="opt ${sel[o.key]===val?'on':''}" data-opt="${o.key}" data-val="${val}">${val}${typeof v==='object'?`<small>${brl(v.p)}</small>`:''}</button>`}).join('')}</div>
+        </div>`).join('')}
+      ${p.custom?`<div class="field"><label for="mCustom">Personalização · nome e número (opcional)</label><input id="mCustom" maxlength="24" placeholder="Ex.: SILVA 26" value="${cur.custom}"></div>`:''}
+      <div class="err" id="mErr"></div>
+      <div class="m-actions">
+        <div class="qty"><button data-q="-1" aria-label="Menos">−</button><span>${qty}</span><button data-q="1" aria-label="Mais">+</button></div>
+        <button class="btn btn-gold" id="mAdd">Adicionar ao playbook</button>
+      </div>
+      <a class="btn btn-ghost" id="mNow" href="${nowHref()}" target="_blank" rel="noopener">
+        <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.8 1 3.8 1.5 5.8 1.5 6.6 0 12-5.4 12-12S18.6 0 12 0z"/></svg>
+        Pedir só este no WhatsApp
+      </a>
+    </div>`;
+  cur.gi = gi;
+}
+function curLine(){
+  return {id:cur.p.id, sel:cur.sel, custom:(cur.custom||'').trim(), qty:cur.qty, price:unitPrice(cur.p,cur.sel)};
+}
+function nowHref(){ return waLink(orderMessage([curLine()],'','')); }
+function checkoutHref(){ return waLink(orderMessage(cart, $('#cName').value.trim(), $('#cNote').value.trim())); }
+function closeAll(){
+  $('#modal').classList.remove('open'); $('#modal').setAttribute('aria-hidden','true');
+  $('#drawer').classList.remove('open'); $('#drawer').setAttribute('aria-hidden','true');
+  $('#scrim').classList.remove('open'); document.body.style.overflow='';
+}
+function validate(){
+  const miss = (cur.p.options||[]).filter(o=>!cur.sel[o.key]).map(o=>o.key.toLowerCase());
+  if(miss.length){ $('#mErr').textContent = `Escolha o ${miss.join(' e ')} antes do snap.`; return false; }
+  return true;
+}
+function variantText(sel, custom){
+  const parts = Object.entries(sel).map(([k,v])=>`${k}: ${v}`);
+  if(custom) parts.push(`Personalização: ${custom}`);
+  return parts.join(' · ');
+}
+
+/* ================== CART ================== */
+function addToCart(p, sel, qty, custom){
+  const key = p.id + '|' + JSON.stringify(sel) + '|' + (custom||'');
+  const ex = cart.find(i=>i.key===key);
+  if(ex) ex.qty += qty; else cart.push({key, id:p.id, sel:{...sel}, custom:custom||'', qty, price:unitPrice(p,sel)});
+  store.set(cart); renderCart();
+  const c = $('#cartCount'); c.classList.remove('bump'); void c.offsetWidth; c.classList.add('bump');
+  toast(`<b>FIRST DOWN!</b> ${p.name} no seu playbook`);
+}
+function renderCart(){
+  const count = cart.reduce((s,i)=>s+i.qty,0);
+  $('#cartCount').textContent = count;
+  const total = cart.reduce((s,i)=>s+i.qty*i.price,0);
+  $('#cartTotal').textContent = brl(total);
+  $('#cartFoot').hidden = !cart.length;
+  $('#checkout').href = checkoutHref();
+  if(!cart.length){
+    $('#cartBody').innerHTML = `<div class="empty"><div class="h-display">Playbook vazio</div><p>Nenhuma jogada desenhada ainda. Volte ao Locker Room e escolha suas peças.</p><br><button class="btn btn-gold" data-close data-jump="#locker">Ir ao Locker Room</button></div>`;
+    return;
+  }
+  $('#cartBody').innerHTML = cart.map((i,idx)=>{
+    const p = byId(i.id); if(!p) return '';
+    return `<div class="line">
+      <img src="${img(p.imgs[0][0])}" alt="">
+      <div><div class="ln">${p.name}</div><div class="lv">${variantText(i.sel,i.custom)||p.sub}</div><div class="lp">${brl(i.price*i.qty)}</div></div>
+      <div><div class="qty"><button data-cq="${idx}" data-d="-1">−</button><span>${i.qty}</span><button data-cq="${idx}" data-d="1">+</button></div><button class="rm" data-rm="${idx}">remover</button></div>
+    </div>`;
+  }).join('');
+}
+function openCart(){
+  renderCart();
+  $('#drawer').classList.add('open'); $('#drawer').setAttribute('aria-hidden','false');
+  $('#scrim').classList.add('open'); document.body.style.overflow='hidden';
+}
+function orderMessage(lines, name, note){
+  let m = GREETING + '\n\n*MEU PLAYBOOK:*\n';
+  let total = 0;
+  lines.forEach(i=>{
+    const p = byId(i.id); const sub = i.price*i.qty; total += sub;
+    const v = variantText(i.sel, i.custom);
+    m += `• ${i.qty}x ${p.name}${v?` (${v})`:''} = ${brl(sub)}\n`;
+  });
+  m += `\n*Total: ${brl(total)}*`;
+  if(name) m += `\nNome: ${name}`;
+  if(note) m += `\nObs.: ${note}`;
+  return m;
+}
+
+/* ================== EVENTS ================== */
+let toastT;
+function toast(html){ const t=$('#toast'); t.innerHTML=html; t.classList.add('show'); clearTimeout(toastT); toastT=setTimeout(()=>t.classList.remove('show'),2200); }
+
+document.addEventListener('click', e=>{
+  const t = e.target.closest('button, a, [data-open]'); if(!t) return;
+
+  if(t.dataset.cat){ filter=t.dataset.cat; renderFilters(); renderGrid(); return; }
+  if(t.dataset.filterJump){ filter=t.dataset.filterJump; renderFilters(); renderGrid(); return; }
+  if(t.dataset.open){ e.preventDefault(); openProduct(t.dataset.open); return; }
+  if(t.dataset.quick){
+    const p = byId(t.dataset.quick);
+    if(p.options && p.options.length) openProduct(p.id); else addToCart(p,{},1,'');
+    return;
+  }
+  if(t.hasAttribute('data-wa-direct')) return;
+  if(t.dataset.g!==undefined){ cur.custom = ($('#mCustom')||{}).value||''; drawModal(+t.dataset.g); return; }
+  if(t.dataset.opt){
+    cur.sel[t.dataset.opt]=t.dataset.val; cur.custom = ($('#mCustom')||{}).value||''; drawModal(cur.gi); return;
+  }
+  if(t.dataset.q){ cur.qty=Math.max(1,cur.qty+(+t.dataset.q)); cur.custom = ($('#mCustom')||{}).value||''; drawModal(cur.gi); return; }
+  if(t.id==='mAdd'){ if(!validate()) return; addToCart(cur.p,cur.sel,cur.qty,($('#mCustom')||{}).value?.trim()); closeAll(); return; }
+  if(t.id==='mNow'){ if(!validate()){ e.preventDefault(); return; } t.href = nowHref(); return; }
+  if(t.dataset.cq!==undefined){ const i=cart[+t.dataset.cq]; i.qty+= +t.dataset.d; if(i.qty<1) cart.splice(+t.dataset.cq,1); store.set(cart); renderCart(); return; }
+  if(t.dataset.rm!==undefined){ cart.splice(+t.dataset.rm,1); store.set(cart); renderCart(); return; }
+  if(t.id==='openCart'){ openCart(); return; }
+  if(t.id==='checkout'){ if(!cart.length){ e.preventDefault(); return; } t.href = checkoutHref(); return; }
+  if(t.hasAttribute('data-close')){
+    closeAll();
+    const href = t.getAttribute('href') || t.dataset.jump;
+    if(href){ e.preventDefault(); setTimeout(()=>document.querySelector(href).scrollIntoView({behavior:'smooth'}),150); }
+  }
+});
+$('#scrim').addEventListener('click', closeAll);
+/* mantém os links do WhatsApp sempre atualizados (links reais funcionam em qualquer navegador) */
+document.addEventListener('input', e=>{
+  if(e.target.id==='mCustom'){ cur.custom = e.target.value; $('#mNow').href = nowHref(); }
+  if(e.target.id==='cName' || e.target.id==='cNote') $('#checkout').href = checkoutHref();
+});
+document.querySelectorAll('[data-wa-direct]').forEach(a=>{ a.href = waLink(GREETING); a.target='_blank'; a.rel='noopener'; });
+document.addEventListener('keydown', e=>{
+  if(e.key==='Escape') closeAll();
+  if(e.key==='Enter' && e.target.dataset && e.target.dataset.open) openProduct(e.target.dataset.open);
+});
+
+/* reveal on scroll */
+const io = 'IntersectionObserver' in window ? new IntersectionObserver(es=>es.forEach(en=>{ if(en.isIntersecting){ en.target.classList.remove('pre'); io.unobserve(en.target);} }),{threshold:.08}) : null;
+function observe(){
+  if(!io) return;
+  document.querySelectorAll('.rv:not(.seen)').forEach(el=>{
+    el.classList.add('seen');
+    const r = el.getBoundingClientRect();
+    if(r.top > innerHeight){ el.classList.add('pre'); io.observe(el); }
+  });
+}
+
+/* init */
+renderTicker(); renderFilters(); renderGrid(); renderLooks(); renderCart(); observe();
+</script>
+</body>
+</html>
